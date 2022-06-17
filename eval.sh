@@ -1,0 +1,5 @@
+CUDA_VISIBLE_DEVICES="2" python3 ./anlg/evaluation/eval.py --gen_file ./models/anlg/all_comet_phrases_prefix/dev-w-comet-preds-generations.jsonl --keys gpt2_for_anli_comet --results_file ./anlg/evaluation/dev-w-comet-preds-generations
+CUDA_VISIBLE_DEVICES="2" python3 ./anlg/evaluation/eval.py --gen_file ./models/anlg/lm_all_comet_emb_prefix/dev-w-comet-preds-generations.jsonl --keys gpt2_for_anli_comet --results_file ./anlg/evaluation/lm_all_comet_emb_prefix
+CUDA_VISIBLE_DEVICES="2" python3 ./anlg/evaluation/eval.py --gen_file ./models/anlg/lm_restricted_comet_emb_prefix/dev-generations.jsonl --keys gpt2_for_anli_comet --results_file ./anlg/evaluation/lm_restricted_comet_emb_prefix
+CUDA_VISIBLE_DEVICES="2" python3 ./anlg/evaluation/eval.py --gen_file ./models/anlg/only_o1_o2/dev-w-comet-preds-generations.jsonl --keys gpt2_for_anli_comet --results_file ./anlg/evaluation/only_o1_o2
+CUDA_VISIBLE_DEVICES="2" python3 ./anlg/evaluation/eval.py --gen_file ./models/anlg/restricted_comet_phrases_prefix/dev-w-comet-preds-generations.jsonl --keys gpt2_for_anli_comet --results_file ./anlg/evaluation/restricted_comet_phrases_prefix

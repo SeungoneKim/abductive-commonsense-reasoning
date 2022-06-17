@@ -2,7 +2,7 @@ from __future__ import absolute_import, division, print_function, unicode_litera
 
 import torch
 import torch.nn as nn
-from comet.models.utils import prepare_position_embeddings
+from acsr.anlg.comet.comet.interactive.models.utils import prepare_position_embeddings
 from pytorch_transformers import GPT2PreTrainedModel
 from pytorch_transformers.modeling_bert import BertLayerNorm as LayerNorm
 from pytorch_transformers.modeling_gpt2 import Block
@@ -24,7 +24,8 @@ class GPT2CometAttentiveModel(GPT2PreTrainedModel):
         self.comet_model = None
         self.comet_encoder = None
 
-        self.apply(self.init_weights)
+        #self.apply(self.init_weights)
+        self.init_weights()
 
     def _resize_token_embeddings(self, new_num_tokens):
         self.wte = self._get_resized_embeddings(self.wte, new_num_tokens)
@@ -144,7 +145,8 @@ class GPT2CometLMHeadModel(GPT2PreTrainedModel):
         self.transformer = GPT2CometAttentiveModel(config)
         self.lm_head = nn.Linear(config.n_embd, config.vocab_size, bias=False)
 
-        self.apply(self.init_weights)
+        #self.apply(self.init_weights)
+        self.init_weights()
         self.tie_weights()
 
     def tie_weights(self):

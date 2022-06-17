@@ -31,7 +31,7 @@ import random
 
 import numpy as np
 import torch
-from comet.data.atomic import all_categories, make_attention_mask
+from acsr.anlg.comet.comet.interactive.data.atomic import all_categories, make_attention_mask
 from torch.utils.data import DataLoader, Dataset, SequentialSampler, RandomSampler
 from torch.utils.data.distributed import DistributedSampler
 from tensorboardX import SummaryWriter
@@ -45,10 +45,10 @@ from pytorch_transformers import (WEIGHTS_NAME, AdamW,
                                   WarmupLinearSchedule
                           )
 
-from anlg.models import GPT2CometLMHeadModel
-from anlg.tokenizers import AnliGpt2Tokenizer, AnliCometGpt2Tokenizer
+from models import GPT2CometLMHeadModel
+from tokenizers import AnliGpt2Tokenizer, AnliCometGpt2Tokenizer
 from utils.file_utils import read_jsonl_lines
-import comet.interactive.functions as comet_interactive
+import acsr.anlg.comet.comet.interactive.functions as comet_interactive
 
 logger = logging.getLogger(__name__)
 

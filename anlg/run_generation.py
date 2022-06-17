@@ -22,7 +22,7 @@ import argparse
 import json
 import logging
 
-import comet.interactive.functions as comet_interactive
+import comet.comet.interactive.functions as comet_interactive
 import numpy as np
 import torch
 import torch.nn.functional as F
@@ -33,10 +33,10 @@ from pytorch_transformers import OpenAIGPTLMHeadModel, OpenAIGPTTokenizer
 from pytorch_transformers import TransfoXLLMHeadModel, TransfoXLTokenizer
 from pytorch_transformers import XLNetLMHeadModel, XLNetTokenizer
 
-from anlg.models import GPT2CometLMHeadModel
-from anlg.run_lm_finetuning import record_to_text_tokens_with_comet_pred, \
+from models import GPT2CometLMHeadModel
+from run_lm_finetuning import record_to_text_tokens_with_comet_pred, \
     anli_record_to_gpt_prompt
-from anlg.tokenizers import AnliGpt2Tokenizer, AnliCometGpt2Tokenizer
+from tokenizers import AnliGpt2Tokenizer, AnliCometGpt2Tokenizer
 from utils.file_utils import read_lines, write_items, read_jsonl_lines
 
 logging.basicConfig(format='%(asctime)s - %(levelname)s - %(name)s -   %(message)s',

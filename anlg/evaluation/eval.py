@@ -1,8 +1,10 @@
-from anlg.evaluation.bleu.bleu import Bleu
-from anlg.evaluation.meteor.meteor_nltk import Meteor
-from anlg.evaluation.rouge.rouge import Rouge
-from anlg.evaluation.cider.cider import Cider
-from anlg.evaluation.bert_score.bert_score import BertScore
+import sys
+sys.path.append('../')
+from acsr.anlg.evaluation.bleu.bleu import Bleu
+from acsr.anlg.evaluation.meteor.meteor_nltk import Meteor
+from acsr.anlg.evaluation.rouge.rouge import Rouge
+from acsr.anlg.evaluation.cider.cider import Cider
+from acsr.anlg.evaluation.bert_score.bert_score import BertScore
 from collections import defaultdict
 from argparse import ArgumentParser
 
@@ -75,7 +77,7 @@ def eval(model_key, sources, references, predictions, results_file):
         pair['prediction'] = output[idx]
 
     ## eval
-    from anlg.evaluation.eval import QGEvalCap
+    from acsr.anlg.evaluation.eval import QGEvalCap
     import json
     from json import encoder
     encoder.FLOAT_REPR = lambda o: format(o, '.4f')

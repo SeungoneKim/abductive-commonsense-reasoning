@@ -1,4 +1,4 @@
-from comet.data.atomic import all_categories
+from acsr.anlg.comet.comet.interactive.data.atomic import all_categories
 from pytorch_transformers import GPT2Tokenizer
 
 
